@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>Allocate Resources to Event</h3>
+
+<form method="POST" class="card p-4 shadow-sm">
+
+    <div class="mb-3">
+        <label class="form-label">Select Event</label>
+        <select name="event_id" class="form-select" required>
+            <option value="">Choose an Event</option>
+            {% for event in events %}
+                <option value="{{ event.event_id }}">
+                    {{ event.title }}
+                </option>
+            {% endfor %}
+        </select>
+    </div>
+
+
+    <div class="mb-3">
+        <label class="form-label">Select Resources</label>
+
+        {% if resources %}
+            {% for resource in resources %}
+                <div class="form-check">
+                    <input
+                        class="form-check-input"
+                        type="checkbox"
+                        name="resource_ids"
+                        value="{{ resource.resource_id }}"
+                        id="res{{ resource.resource_id }}"
+                    >
+                    <label class="form-check-label" for="res{{ resource.resource_id }}">
+                        {{ resource.resource_name }} ({{ resource.resource_type }})
+                    </label>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p class="text-muted">No resources available. Please add resources first.</p>
+        {% endif %}
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+        Allocate Resources
+    </button>
+</form>
+
+{% endblock %}

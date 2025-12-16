@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>All Events</h3>
+
+<table class="table table-bordered table-striped shadow-sm">
+    <thead class="table-dark">
+        <tr>
+            <th>Title</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for event in events %}
+        <tr>
+            <td>{{ event.title }}</td>
+            <td>{{ event.start_time }}</td>
+            <td>{{ event.end_time }}</td>
+            <td>{{ event.description }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

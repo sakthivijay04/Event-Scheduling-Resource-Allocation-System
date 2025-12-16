@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>Resource Utilisation Report</h3>
+
+<form method="POST" class="card p-3 mb-4 shadow-sm">
+    <div class="row">
+        <div class="col-md-4">
+            <label class="form-label">Start Date</label>
+            <input type="datetime-local" name="start_date" class="form-control" required>
+        </div>
+
+        <div class="col-md-4">
+            <label class="form-label">End Date</label>
+            <input type="datetime-local" name="end_date" class="form-control" required>
+        </div>
+
+        <div class="col-md-4 d-flex align-items-end">
+            <button type="submit" class="btn btn-primary">
+                Generate Report
+            </button>
+        </div>
+    </div>
+</form>
+
+{% if report %}
+<table class="table table-bordered table-striped shadow-sm">
+    <thead class="table-dark">
+        <tr>
+            <th>Resource</th>
+            <th>Total Hours Utilized</th>
+            <th>Upcoming Bookings</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in report %}
+        <tr>
+            <td>{{ item.resource_name }}</td>
+            <td>{{ item.total_hours }} hrs</td>
+            <td>
+                {% if item.upcoming_events %}
+                    <ul>
+                        {% for event in item.upcoming_events %}
+                            <li>{{ event.title }} ({{ event.start_time }})</li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    No upcoming bookings
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endif %}
+
+{% endblock %}

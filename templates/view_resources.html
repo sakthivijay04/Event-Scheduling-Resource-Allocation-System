@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>All Resources</h3>
+
+<table class="table table-bordered table-striped shadow-sm">
+    <thead class="table-dark">
+        <tr>
+            <th>Resource Name</th>
+            <th>Resource Type</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for resource in resources %}
+        <tr>
+            <td>{{ resource.resource_name }}</td>
+            <td>{{ resource.resource_type }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
