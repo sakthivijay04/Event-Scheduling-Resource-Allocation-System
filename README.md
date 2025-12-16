@@ -153,18 +153,23 @@ http://127.0.0.1:5000/events
 Screenshots can be added here for visual reference.
 
 **Event creation page**
+
 <img width="954" height="846" alt="Screenshot 2025-12-16 203704" src="https://github.com/user-attachments/assets/e1795455-31dd-4c28-b2c1-5e34f6eb1425" />
 
 **Resource creation page**
+
 <img width="961" height="804" alt="Screenshot 2025-12-16 203728" src="https://github.com/user-attachments/assets/4839975b-433d-4d17-a10d-b144ced7dc63" />
 
 **Resource management page**
+
 <img width="961" height="560" alt="Screenshot 2025-12-16 203739" src="https://github.com/user-attachments/assets/ad68ab3b-f9ac-4b9d-8658-dce5a6ebc6bf" />
 
 **Resource allocation page**
+
 <img width="959" height="671" alt="Screenshot 2025-12-16 203750" src="https://github.com/user-attachments/assets/97c10455-8fbe-425d-8d88-c75b8169f7a2" />
 
 **Resource utilisation report**
+
 <img width="948" height="711" alt="Screenshot 2025-12-16 203830" src="https://github.com/user-attachments/assets/ffffd4b4-8abb-4317-9d7f-a1de6eb6e341" />
 
 
