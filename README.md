@@ -1,5 +1,5 @@
 # 📅 Event Scheduling & Resource Allocation System
-Project Overview
+**Project Overview**
 
 This project is a Flask-based web application designed to manage events and efficiently allocate shared resources such as rooms, instructors, and equipment.
 
@@ -16,8 +16,9 @@ Prevent double-booking of resources using conflict detection
 View resource utilization reports for better planning
 
 The application is intentionally kept simple, clean, and readable, making it suitable for interview demonstrations, academic projects, and early-stage production use.
+
  # 🛠️ Tech Stack
-Layer	             Technology
+**Layer**	        **Technology**
 Backend	         Python (Flask)
 Database	         SQLite
 ORM	              SQLAlchemy
@@ -29,7 +30,7 @@ Version          Control	Git
 
 The application uses a relational database design with three main tables:
 
-1. Event
+**1. Event**
 
 Stores event details such as title and schedule.
 
@@ -45,7 +46,7 @@ end_time
 
 description
 
-2. Resource
+**2. Resource**
 
 Represents reusable assets like rooms, instructors, or equipment.
 
@@ -57,7 +58,7 @@ resource_name
 
 resource_type
 
-3. EventResourceAllocation (Junction Table)
+**3. EventResourceAllocation (Junction Table)**
 
 Handles the many-to-many relationship between events and resources.
 
@@ -82,7 +83,7 @@ resource_id (Foreign Key → Resource)
 To prevent double-booking of resources, the system checks for time overlaps before saving an allocation.
 
 Core Rule Used
-(existing_start < new_end) AND (new_start < existing_end)
+**(existing_start < new_end) AND (new_start < existing_end)**
 
 What this logic ensures:
 
@@ -121,18 +122,18 @@ Only the overlapping portion of an event within the selected date range is count
 This prevents over-counting and ensures accurate reporting
 
 # ▶️ Steps to Run the Project Locally
-1. Clone the Repository
+**1. Clone the Repository**
 git clone <repository-url>
 cd event_scheduler
 
-2. Create Virtual Environment (Optional but Recommended)
+**2. Create Virtual Environment (Optional but Recommended)**
 python -m venv venv
 venv\Scripts\activate   # Windows
 
-3. Install Dependencies
+**3. Install Dependencies**
 pip install flask flask-sqlalchemy
 
-4. Create the Database
+**4. Create the Database**
 python
 >>> from app import app
 >>> from extensions import db
@@ -140,29 +141,30 @@ python
 ...     db.create_all()
 >>> exit()
 
-5. Run the Application
+**5. Run the Application**
 python app.py
 
-6. Open in Browser
+**6. Open in Browser**
 http://127.0.0.1:5000/events
 
 
 # 📸 Screenshots 
 
 Screenshots can be added here for visual reference.
-Event creation page
+
+**Event creation page**
 <img width="954" height="846" alt="Screenshot 2025-12-16 203704" src="https://github.com/user-attachments/assets/e1795455-31dd-4c28-b2c1-5e34f6eb1425" />
 
-Resource creation page
+**Resource creation page**
 <img width="961" height="804" alt="Screenshot 2025-12-16 203728" src="https://github.com/user-attachments/assets/4839975b-433d-4d17-a10d-b144ced7dc63" />
 
-Resource management page
+**Resource management page**
 <img width="961" height="560" alt="Screenshot 2025-12-16 203739" src="https://github.com/user-attachments/assets/ad68ab3b-f9ac-4b9d-8658-dce5a6ebc6bf" />
 
-Resource allocation page
+**Resource allocation page**
 <img width="959" height="671" alt="Screenshot 2025-12-16 203750" src="https://github.com/user-attachments/assets/97c10455-8fbe-425d-8d88-c75b8169f7a2" />
 
-Resource utilisation report
+**Resource utilisation report**
 <img width="948" height="711" alt="Screenshot 2025-12-16 203830" src="https://github.com/user-attachments/assets/ffffd4b4-8abb-4317-9d7f-a1de6eb6e341" />
 
 
